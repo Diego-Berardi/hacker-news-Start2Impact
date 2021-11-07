@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -8,6 +9,10 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist'
   },
+  plugins: [new HtmlWebpackPlugin({
+    title: 'Hacker News',
+    template: './src/template.html'
+  })],
   
   module: {
       rules: [
@@ -26,7 +31,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'src'),
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     open:true,
