@@ -6,8 +6,7 @@ module.exports = {
   entry : './src/assets/js/index.js',
   output: {
       filename: 'main.js',
-      path: path.resolve(__dirname, 'dist'),
-      publicPath: '/dist'
+      path: path.resolve(__dirname, 'dist')
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Hacker News',
