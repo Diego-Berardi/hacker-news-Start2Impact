@@ -1,0 +1,116 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+}
+$background-color: #202124;
+$text-color: #ffffff;
+$border-color: #9b9b9b;
+
+$link-color: #8ab4f8;
+
+body{
+    background-color: $background-color;
+    color: $text-color;
+}
+a {
+    color: $text-color;
+    text-decoration: none;
+}
+.container {
+    width: 95%;
+    margin: auto;
+
+    max-width: 1000px;
+}
+
+header{
+    width: 100%;
+    margin: auto;
+    padding: 1em 2em; 
+    border-bottom: black 1px solid ;
+    box-shadow: white 2px;
+}
+
+#news-container{
+
+    padding: 1em;
+    .news-list{
+        list-style: none;
+        margin: 1.2em 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        .news-item{
+            padding: 1em;
+            border: $border-color solid 1px;
+            border-radius: 10px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h3{
+                margin-bottom: 1em;
+                line-height: 1.5;
+            }
+            p{
+                color: $link-color;
+            }
+        }
+        .news-item:hover h3{
+            text-decoration: underline;
+        }
+        
+    }
+    
+    #load-more{
+        font-size: 1rem;
+        margin: auto;
+        background-color: transparent;
+        color: $link-color;
+        padding: 0.5em 1em;
+        border: $link-color solid 1px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 
+            background-color 200ms ease-in-out,
+            color 200ms ease-in-out;
+    }
+
+    #load-more:hover {
+        background-color: $link-color;
+        color: $background-color;
+    }
+
+}
+
+@media only screen and (min-width: 700px){
+    :root{
+        font-size: 15px;
+    }
+    #news-container{
+        .news-list{       
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 900px){
+    :root{
+        font-size: 17px;
+    }
+
+}
+
